@@ -49,6 +49,8 @@ const Login = (props) => {
       clearTimeout(identifier);
     };
   }, [emailIsValid, passwordIsValid]);
+  // OR: [emailState.value, passwordState.value]);
+  // BUT NOT: [emailState, passwordState] because the effect function would rerun whenever any property of emailState/passwordState changes
 
   const emailChangeHandler = (event) => {
     dispatchEmail({ type: "USER_INPUT", val: event.target.value });
