@@ -29,13 +29,13 @@ function App() {
 
   return (
     // Context.Provider can wrap around other components, which will then have access to the Context
-    // But if we have a default value in the Context
     <AuthContext.Provider
       value={{
         isLoggedIn: isLoggedIn,
+        onLogout: logoutHandler,
       }}
     >
-      <MainHeader onLogout={logoutHandler} />
+      <MainHeader />
       <main>
         {!isLoggedIn && <Login onLogin={loginHandler} />}
         {isLoggedIn && <Home onLogout={logoutHandler} />}
