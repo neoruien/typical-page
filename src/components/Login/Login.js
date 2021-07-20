@@ -12,7 +12,7 @@ const Login = (props) => {
   const [formIsValid, setFormIsValid] = useState(false);
 
   useEffect(() => {
-    // ADD: all "things" that could change if your component or your parent component re-rendered
+    // ADD: all "things" that could change if your component or your parent component re-rendered. add everything that is referred to inside this effect function as a dependency, unless they should not be added (see below)
     // DONT ADD: state updating functions as React guarantees that those functions never change
     // DONT ADD: built-in APIs or functions like fetch() and localStorage as they are not related to the React component render cycle and they also never change
     // DONT ADD: variables or functions you defined outside of your components as changing them won't affect your components
